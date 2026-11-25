@@ -178,12 +178,12 @@ if(!files.includes(i))files.push(i);save();hud();
 later(()=>{$('#stp').innerHTML=`<div>تم اكتشاف الملف 0${i+1}</div><small>أُضيف إلى ملف القضية: ${P[i].name}</small>`;$('#stp').className='on'},2600);
 later(()=>{$('#stp').className='';if(i===0){show(2,true);pz(1)}else if(i===1){show(3,true);pz(2)}else if(i===2){show(4,true);pz(3)}else if(i===6){show(10,true);pz(7)}else if(i===7){show(11,true);pz(8)}else if(i===8){show(8)}else{show(i+2)}},6000)};
 const reveal=()=>{gen++;$('#ov').innerHTML='<div id="bl" style="opacity:0"></div>';$('#hud').className='h';const b=$('#bl');requestAnimationFrame(()=>b.style.opacity=1);
-setTimeout(()=>{$('#sc').innerHTML=S[9]();$('#ov').innerHTML='<div id="bl"></div><div id="fin"><small>أنت الآن...</small><h1>Ikigai Public Speaker</h1><h2>متحدث الإيكيجاي</h2><h3>Hossam Ahmed</h3></div>'},1800);
+setTimeout(()=>{$('#sc').innerHTML=S[9]();$('#ov').innerHTML='<div id="bl"></div><div id="fin"><small>أنت الآن...</small><h1>Ikigai Public Speaker</h1><h2>متحدث الإيكيجاي</h2><h3>Hossam Ahmed</h3><h4 style="font-size:1.5em;color:#CAAD69;margin:.2em 0">Eman zidan</h4></div>'},1800);
 const at=(ms,f)=>setTimeout(f,ms),c=x=>cur().classList.add(x),f=$;
 at(4200,()=>{c('a');$('#bl').style.opacity=0});
 at(5600,()=>c('b'));at(10500,()=>c('c'));at(12000,()=>{c('d');clap()});
 const q=(n,ms)=>at(ms,()=>$('#fin').children[n].classList.add('on'));
-q(0,12500);at(15500,()=>{$('#fin').children[0].classList.remove('on')});q(1,15800);q(2,18500);q(3,21000)};
+q(0,12500);at(15500,()=>{$('#fin').children[0].classList.remove('on')});q(1,15800);q(2,18500);q(3,21000);q(4,22500)};
 const clap=()=>{try{const a=new AudioContext(),len=a.sampleRate*.05,b=a.createBuffer(1,len,a.sampleRate),d=b.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*(1-i/len);for(let k=0;k<160;k++){const s=a.createBufferSource(),g=a.createGain();s.buffer=b;g.gain.value=.07+Math.random()*.08;s.connect(g).connect(a.destination);s.start(a.currentTime+k*.045+Math.random()*.05)}}catch(e){}};
 
 /* ---------- boot ---------- */
@@ -197,7 +197,7 @@ $('#app').innerHTML=`<svg width="0" height="0" style="position:absolute"><defs>
 <filter id="gl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 <filter id="nz"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2"/><feColorMatrix values="0 0 0 0 .2 0 0 0 0 .2 0 0 0 0 .2 0 0 0 .1 0"/></filter></defs></svg>
 <div id="st"><div id="sc"></div><div id="hud" class="h"><b>CASE 001</b><button id="fb"></button></div><div id="dr"></div><div id="cap"></div><div id="cm"></div><div id="pz"></div><div id="stp"></div>
-<div id="ov"><div id="cv"><small>CASE 001</small><h1>قضية متحدث الإيكيجاي</h1><h2>Hossam Ahmed</h2><i>سري</i><button id="begin">ابدأ التحقيق</button></div></div></div>`;
+<div id="ov"><div id="cv"><small>CASE 001</small><h1>قضية متحدث الإيكيجاي</h1><h2>Hossam Ahmed</h2><h3 style="font-size:1.2em;color:#CAAD69;margin:.2em 0">Eman zidan</h3><i>سري</i><button id="begin">ابدأ التحقيق</button></div></div></div>`;
 $('#st').addEventListener('click',e=>{const a=e.target.closest('[data-a]');a&&act[a.dataset.a]&&act[a.dataset.a]()});
 $('#fb').onclick=()=>$('#dr').classList.toggle('on');
 hud();show('C',1);
