@@ -1,13 +1,15 @@
 const $=s=>document.querySelector(s),KEY='asc-001';
 const nz=s=>s.replace(/[\u064B-\u065F\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[^\u0621-\u064Aa-z0-9 ]/gi,'').split(/\s+/).filter(Boolean).map(w=>w.replace(/^ال/,'')).join(' ');
 const P=[
-{name:'الوعي بالذات',a:['الوعي بالذات','وعي بالذات','معرفة الذات'],q:'من أنا؟',r:'«قبل أن أتحدث أمام الآخرين، هناك شخص يجب أن أعرفه أولًا. أعرف أفكاره، ومشاعره، ونقاط قوته، وما الذي يريد أن يوصله. كلما عرفته أكثر، أصبح صوتي أكثر صدقًا.»',h:'أنا أول خطوة قبل أن تبدأ في فهم جمهورك.'},
+{name:'VSP',a:['VSP','في اس بي','القيم ونقاط القوة ونقاط الشغف','القيم نقاط القوة نقاط الشغف','قيم ونقاط قوة ونقاط شغف'],q:'ما الرمز الذي يجمعها؟',r:'«أنا ثلاثة جوانب تكشف لك ما يميزك كمتحدث. الأول يعبّر عما تؤمن به وما تعتبره مهمًا. والثاني يكشف ما تتقنه وما تجيده. والثالث يعبّر عما تحبه ويمنحك الحماس للاستمرار. عندما تجتمع هذه الجوانب، تتضح هويتك ورسالتك.»',h:'يتكوّن اسمي من ثلاثة أحرف، وكل حرف يشير إلى جانب من جوانبك.'},
 {name:'نبرات الصوت',a:['نبرات الصوت','نبرة الصوت','نبره الصوت','نبرات'],q:'من أنا؟',r:'«أنا لا أُرى ولا أُلمس، لكنني أستطيع أن أحول الجملة نفسها من عادية إلى مؤثرة، ومن سؤال إلى تعجب، ومن حماس إلى هدوء. إذا اختفيت، أصبح الكلام بلون واحد.»',h:'أنا التي تجعل صوتك يتغير بحسب المعنى والشعور.'},
 {name:'فن الوقفات',a:['فن الوقفات','الوقفات','الوقفة','فن الوقفة'],q:'ما أنا؟',r:'«يعتقد الكثيرون أنني فراغ، بينما أكون أحيانًا أكثر تأثيرًا من الكلمات نفسها. أظهر لثوانٍ معدودة، لكنني أجبر الجمهور على الإنصات.»',h:'أنا لحظة صمت... لكنها ليست بلا معنى.'},
 {name:'لغة الجسد',a:['لغة الجسد','لغة الجسم'],q:'من أنا؟',r:'«أتحدث دون أن أنطق حرفًا واحدًا. إذا تناقضت مع كلماتك، صدقني الجمهور أنا وكذب كلماتك.»',h:'أنا الرسالة التي يراها الجمهور قبل أن يسمع كلماتك.'},
 {name:'الخريطة الذهنية',a:['الخريطة الذهنية','خريطة ذهنية','خريطة الأفكار','mind map','مايند ماب'],q:'ما أنا؟',r:'«أنا موجود قبل بداية الحديث، لكنني لا أظهر للجمهور أبدًا. من ينساني يتشتت، ومن يصادقني يعرف من أين يبدأ وإلى أين ينتهي.»',h:'أساعدك على ترتيب أفكارك قبل أن تتحدث.'},
 {name:'الخوف من التحدث أمام الجمهور',a:['الخوف من التحدث أمام الجمهور','الخوف من الحديث أمام الجمهور','الخوف من التحدث','الخوف من الجمهور','رهبة المسرح'],q:'من أنا؟',r:'«كل متحدث عظيم قابلني يومًا ما. البعض هرب مني فاختفى، والبعض واجهني فأصبح أقوى. لا أختفي تمامًا، لكن يمكن السيطرة علي.»',h:'أنا شعور يظهر عندما تقف أمام الجمهور.'},
-{name:'الارتجال',a:['الارتجال','ارتجال'],q:'من أنا؟',r:'«أظهر عندما لا تسير الأمور كما خططت لها. لا أحتاج إلى نص جاهز. أساعدك على الاستمرار عندما يفاجئك الموقف. كلما كنت حاضر الذهن، استطعت أن تجد طريقك في اللحظة.»',h:'أنا مهارة تساعدك عندما يحدث شيء غير متوقع.'}];
+{name:'الارتجال',a:['الارتجال','ارتجال'],q:'من أنا؟',r:'«أظهر عندما لا تسير الأمور كما خططت لها. لا أحتاج إلى نص جاهز. أساعدك على الاستمرار عندما يفاجئك الموقف. كلما كنت حاضر الذهن، استطعت أن تجد طريقك في اللحظة.»',h:'أنا مهارة تساعدك عندما يحدث شيء غير متوقع.'},
+{name:'السرد القصصي',a:['السرد القصصي','فن السرد القصصي','رواية القصص','الحكي'],q:'ما المهارة التي أبحث عنها؟',r:'«قد تنسى معلومة سمعتها، لكنك تتذكر حكاية جعلتك تشعر بشيء. أجمع الأشخاص والأحداث والمشاعر في تسلسل يجعل المستمع يريد معرفة ما سيحدث بعد ذلك. لا أكتفي بنقل الكلام، بل أجعل المستمع يعيش التجربة.»',h:'أحوّل الفكرة إلى حكاية لها بداية وأحداث ونهاية.'},
+{name:'التأثير والإقناع',a:['التأثير والاقناع','التاثير والاقناع','التأثير','الاقناع','الإقناع'],q:'ما المهارتان اللتان تجتمعان هنا؟',r:'«لا يكفيني أن يسمعك الآخرون، ولا أن يفهموا كلماتك فقط. أساعدك على عرض فكرتك بطريقة تلامس عقولهم ومشاعرهم، وتدفعهم إلى التفكير في وجهة نظرك وربما اتخاذ قرار جديد. لا أعتمد على الصوت المرتفع، بل على قوة الرسالة وطريقة تقديمها.»',h:'أجعل رسالتك تترك أثرًا، وأساعدك على كسب قبول الآخرين لفكرتك.'}];
 let files=[],gen=0,sd={};try{files=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(files))}catch(e){}};
 const later=(f,ms)=>{const g=gen;setTimeout(()=>g==gen&&f(),ms)};
@@ -75,11 +77,11 @@ pp.forEach(g=>{g._x=+g.dataset.x;g._y=+g.dataset.y;g._r=+g.dataset.r;pos(g);g.on
 s.onpointermove=e=>{if(!d)return;const p=pt(e);d._x=p.x+d._ox;d._y=p.y+d._oy;pos(d)};
 s.onpointerup=()=>{if(!d)return;mv.add(d);d=null;if(mv.size>=3&&go('lit'))later(()=>pz(4),1300)};
 s.tidy=()=>{[[500,140],[200,340],[400,340],[600,340],[800,340]].forEach((t,i)=>{pp[i]._x=t[0];pp[i]._y=t[1];pp[i]._r=0;pos(pp[i])})}},
-7:()=>{later(()=>cls('glitch'),2200);later(()=>cls('dead'),3000);later(()=>cls('ask'),3800);later(()=>pz(6),5800)},
+7:()=>{later(()=>cls('glitch'),2200);later(()=>cls('dead'),3000);later(()=>cls('ask'),3800);later(()=>pz(6),5800)},10:()=>S[6](),11:()=>S[7](),
 8:()=>{$('#ov').innerHTML=`<div id="bd">${files.map((i,k)=>`<div class="fc" style="--r:${(i*7)%9-4}deg;animation-delay:${k*.2}s"><small>0${i+1}</small>${P[i].name}</div>`).join('')}</div><h2 id="t1"></h2><button id="rv" hidden>كشف الحقيقة</button>`;
 const t=x=>{const e=$('#t1');e.style.animation='none';e.offsetWidth;e.style.animation='';e.textContent=x};later(()=>t('لقد اكتملت الأدلة.'),1800);later(()=>t('بقي شيء واحد فقط.'),4600);later(()=>{$('#rv').hidden=false},6600);$('#rv').onclick=reveal}};
 const cap=t=>{const e=$('#cap');e.textContent=t;e.classList.add('on');later(()=>e.classList.remove('on'),5500)};
-const hud=()=>{$('#fb').textContent=`FILES ${files.length}/7`;$('#dr').innerHTML=files.length?files.map(i=>`<div>0${i+1} — ${P[i].name}</div>`).join(''):'<div>—</div>'};
+const hud=()=>{$('#fb').textContent=`FILES ${files.length}/9`;$('#dr').innerHTML=files.length?files.map(i=>`<div>0${i+1} — ${P[i].name}</div>`).join(''):'<div>—</div>'};
 const show=(k,first)=>{gen++;sd={};$('#pz').className='';$('#cm').innerHTML='';const s=$('#sc'),put=()=>{s.innerHTML=S[k]();s.style.opacity=1;I[k]&&I[k]()};first?put():(s.style.opacity=0,setTimeout(put,800))};
 const pz=i=>{
   const p=P[i],e=$('#pz');
@@ -173,7 +175,7 @@ const pz=i=>{
 const win=i=>{cls('solved');if(i==3){const s=cur().querySelector('.spk');s.classList.remove('c');s.classList.add('o')}if(i==4)cur().tidy();if(i==6)cur().querySelector('.spk').classList.add('o');
 if(!files.includes(i))files.push(i);save();hud();
 later(()=>{$('#stp').innerHTML=`<div>تم اكتشاف الملف 0${i+1}</div><small>أُضيف إلى ملف القضية: ${P[i].name}</small>`;$('#stp').className='on'},2600);
-later(()=>{$('#stp').className='';if(i===0){show(2,true);pz(1)}else if(i===1){show(3,true);pz(2)}else if(i===2){show(4,true);pz(3)}else{show(i==6?8:i+2)}},6000)};
+later(()=>{$('#stp').className='';if(i===0){show(2,true);pz(1)}else if(i===1){show(3,true);pz(2)}else if(i===2){show(4,true);pz(3)}else if(i===6){show(10,true);pz(7)}else if(i===7){show(11,true);pz(8)}else if(i===8){show(8)}else{show(i+2)}},6000)};
 const reveal=()=>{gen++;$('#ov').innerHTML='<div id="bl" style="opacity:0"></div>';$('#hud').className='h';const b=$('#bl');requestAnimationFrame(()=>b.style.opacity=1);
 setTimeout(()=>{$('#sc').innerHTML=S[9]();$('#ov').innerHTML='<div id="bl"></div><div id="fin"><small>أنت الآن...</small><h1>Ikigai Public Speaker</h1><h2>متحدث الإيكيجاي</h2><h3>Hossam Ahmed</h3></div>'},1800);
 const at=(ms,f)=>setTimeout(f,ms),c=x=>cur().classList.add(x),f=$;
@@ -198,4 +200,4 @@ $('#app').innerHTML=`<svg width="0" height="0" style="position:absolute"><defs>
 $('#st').addEventListener('click',e=>{const a=e.target.closest('[data-a]');a&&act[a.dataset.a]&&act[a.dataset.a]()});
 $('#fb').onclick=()=>$('#dr').classList.toggle('on');
 hud();show('C',1);
-$('#begin').onclick=()=>{$('#ov').innerHTML='';$('#hud').className='';files.length>=7?show(8):files.length?show(files.length+1):show(0)};
+$('#begin').onclick=()=>{$('#ov').innerHTML='';$('#hud').className='';const next=[0,1,2,3,4,5,6,7,8].find(i=>!files.includes(i));if(next===undefined)show(8);else if(next===0)show(0);else if(next===1)show(2);else if(next===2)show(3);else if(next===3)show(4);else if(next===4)show(5);else if(next===5)show(6);else if(next===6)show(7);else if(next===7){show(10,true);pz(7)}else{show(11,true);pz(8)}};
