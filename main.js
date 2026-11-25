@@ -217,4 +217,5 @@ $('#app').innerHTML=`<svg width="0" height="0" style="position:absolute"><defs>
 $('#st').addEventListener('click',e=>{const a=e.target.closest('[data-a]');a&&act[a.dataset.a]&&act[a.dataset.a]()});
 $('#fb').onclick=()=>$('#dr').classList.toggle('on');
 hud();show('C',1);
-$('#begin').onclick=()=>{$('#ov').innerHTML='';$('#hud').className='';const next=[0,1,2,3,4,5,6,7,8].find(i=>!files.includes(i));if(next===undefined)show(8);else if(next===0)show(0);else if(next===1)show(2);else if(next===2)show(3);else if(next===3)show(4);else if(next===4)show(5);else if(next===5)show(6);else if(next===6)show(7);else if(next===7){show(10,true);pz(7)}else{show(11,true);pz(8)}};
+let gameStarted=false;
+$('#begin').onclick=ev=>{ev.preventDefault();if(gameStarted)return;gameStarted=true;const b=$('#begin');if(b)b.disabled=true;$('#ov').innerHTML='';$('#hud').className='';const next=[0,1,2,3,4,5,6,7,8].find(i=>!files.includes(i));if(next===undefined)show(8,true);else if(next===0)show(0,true);else if(next===1)show(2,true);else if(next===2)show(3,true);else if(next===3)show(4,true);else if(next===4)show(5,true);else if(next===5)show(6,true);else if(next===6)show(7,true);else if(next===7){show(10,true);pz(7)}else{show(11,true);pz(8)}};
