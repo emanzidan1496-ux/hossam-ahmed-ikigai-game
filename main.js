@@ -196,7 +196,7 @@ later(()=>{$('#stp').className='';if(i===0){show(2,true);pz(1)}else if(i===1){sh
 const reveal=()=>{gen++;$('#ov').style.display='block';$('#ov').style.backgroundImage='none';$('#ov').style.backgroundColor='#080d18';$('#ov').innerHTML='<div id="bl" style="opacity:0"></div>';$('#hud').className='h';const b=$('#bl');requestAnimationFrame(()=>b.style.opacity=1);
 setTimeout(()=>{$('#sc').innerHTML=S[9]();$('#ov').innerHTML='<div id="bl"></div><div id="fin"><small>أنت الآن...</small><h1>Ikigai Public Speaker</h1><h2>متحدث الإيكيجاي</h2><h3>Hossam Ahmed</h3><h4 style="font-size:2.2em;font-weight:700;color:#CAAD69;margin:.3em 0;text-shadow:0 2px 14px #000">Eman zidan</h4></div>'},350);
 const at=(ms,f)=>setTimeout(f,ms),c=x=>cur().classList.add(x),f=$;
-at(900,()=>{c('a');$('#bl').style.opacity=0});
+at(900,()=>{c('a');$('#bl').style.opacity=0;$('#ov').style.backgroundColor='transparent'});
 at(1500,()=>c('b'));at(2200,()=>c('c'));at(2900,()=>{c('d');clap()});
 const q=(n,ms)=>at(ms,()=>$('#fin').children[n].classList.add('on'));
 q(0,1800);at(2700,()=>{$('#fin').children[0].classList.remove('on')});q(1,2900);q(2,3900);q(3,4900);q(4,5700)};
