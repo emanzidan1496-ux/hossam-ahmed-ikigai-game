@@ -23,7 +23,23 @@ const wood=y=>`<rect y="${y}" width="1000" height="${600-y}" fill="url(#wd)"/>`+
 const curt=(x,w,c='')=>`<rect class="${c}" x="${x}" y="0" width="${w}" height="480" fill="url(#cf)"/><rect x="${x}" y="0" width="${w}" height="26" fill="#1b1a17"/>`;
 const cone=(x,w,h=470)=>`<path d="M${x-16} 0L${x+16} 0L${x+w} ${h}L${x-w} ${h}Z" fill="url(#sp)"/>`;
 const aud=(y)=>[...Array(22)].map((_,i)=>{const x=i*47+(i%2?12:-4),h=(i*37)%18;return `<g class="ah" style="animation-delay:${i%5*.3}s"><circle cx="${x}" cy="${y+h}" r="16" fill="#131210"/><path d="M${x-27} 620Q${x-23} ${y+h+22} ${x} ${y+h+20}Q${x+23} ${y+h+22} ${x+27} 620Z" fill="#131210"/></g>`}).join('');
-const mic=(x,y)=>`<g transform="translate(${x} ${y})"><path d="M0 0V-130" stroke="#111" stroke-width="5"/><ellipse rx="34" ry="7" fill="#111"/><rect x="-7" y="-162" width="14" height="34" rx="7" fill="#17212B" stroke="#CAAD69" stroke-width="2"/></g>`;
+const mic=(x,y)=>`<g transform="translate(${x} ${y})">
+<ellipse cx="0" cy="0" rx="42" ry="9" fill="#090D13" opacity=".9"/>
+<path d="M-9 -7V-91H9V-7" fill="#17212B" stroke="#CAAD69" stroke-width="3"/>
+<path d="M-26 -90Q-38 -98 -38 -116V-164Q-38 -184 -18 -188H18Q38 -184 38 -164V-116Q38 -98 26 -90Z" fill="#111923" stroke="#CAAD69" stroke-width="4"/>
+<path d="M-28 -164Q-28 -179 -14 -181H14Q28 -179 28 -164V-119Q28 -104 14 -103H-14Q-28 -104 -28 -119Z" fill="#202D39" stroke="#53D1EC" stroke-width="2"/>
+<g stroke="#D5D9DC" stroke-width="4" stroke-linecap="round">
+<path d="M-23 -163H23M-27 -151H27M-28 -139H28M-28 -127H28M-24 -115H24"/>
+</g>
+<g stroke="#CAAD69" stroke-width="2" opacity=".95">
+<path d="M-31 -158H31M-31 -145H31M-31 -132H31M-27 -119H27"/>
+<path d="M-37 -166L-43 -160M37 -166L43 -160"/>
+</g>
+<path d="M-46 -112Q-52 -84 -25 -78H25Q52 -84 46 -112" fill="none" stroke="#CAAD69" stroke-width="5" stroke-linecap="round"/>
+<path d="M0 -78V-14" stroke="#202D39" stroke-width="9"/>
+<path d="M0 -78V-14" stroke="#53D1EC" stroke-width="2" opacity=".7"/>
+<path d="M-24 -8H24" stroke="#CAAD69" stroke-width="5" stroke-linecap="round"/>
+</g>`;
 const spk=(x,y,m='',s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><g class="spk ${m}"><ellipse cy="4" rx="46" ry="8" fill="#0008"/><path class="bd" d="M-38 0L-30-110Q0-128 30-110L38 0Z" fill="#1b1a17" stroke="#CAAD69" stroke-opacity=".55"/><circle class="hd" cy="-138" r="17" fill="#1b1a17" stroke="#CAAD69" stroke-opacity=".55"/><path class="ar" d="M-28-100L-38-40M28-100L38-40" stroke="#1b1a17" stroke-width="9" stroke-linecap="round"/><path class="cr" d="M-26-92L22-58M26-92L-22-58" stroke="#2c2a25" stroke-width="9" stroke-linecap="round"/></g></g>`;
 const bars=(x,y,w,h)=>`<g class="bars">${[...Array(30)].map((_,i)=>{const hh=h*(.3+((i*7)%10)/14);return `<rect x="${x+i*w/30}" y="${y-hh/2}" width="${w/30-4}" height="${hh}" rx="2" fill="#CAAD69" style="animation-delay:${(i*.13)%1}s"/>`}).join('')}</g>`;
 const ring=(x,y,r,a)=>`<circle class="rg hot" data-a="${a}" cx="${x}" cy="${y}" r="${r}"/>`;
