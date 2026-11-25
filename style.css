@@ -145,3 +145,7 @@ svg.scene{position:absolute;inset:0;width:100%;height:100%;animation:zin 2.6s ea
   animation:none;
   white-space:nowrap;
 }
+
+
+/* Make the final reveal action clearly readable */
+#rv{font-family:inherit;font-size:2.2em;font-weight:700;line-height:1.25;min-width:8em;padding:.55em 1.5em;border:2px solid #CAAD69;border-radius:10px;background:#3C93FF;color:#F8FBFF;text-shadow:0 2px 8px #17212B;box-shadow:0 0 24px #53D1EC88;}
