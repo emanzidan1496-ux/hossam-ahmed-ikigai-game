@@ -95,7 +95,7 @@ pp.forEach(g=>{g._x=+g.dataset.x;g._y=+g.dataset.y;g._r=+g.dataset.r;pos(g);g.on
 s.onpointermove=e=>{if(!d)return;const p=pt(e);d._x=p.x+d._ox;d._y=p.y+d._oy;pos(d)};
 s.onpointerup=()=>{if(!d)return;mv.add(d);d=null;if(mv.size>=3&&go('lit'))later(()=>pz(4),1300)};
 s.tidy=()=>{[[500,140],[200,340],[400,340],[600,340],[800,340]].forEach((t,i)=>{pp[i]._x=t[0];pp[i]._y=t[1];pp[i]._r=0;pos(pp[i])})}},
-7:()=>{later(()=>cls('glitch'),2200);later(()=>cls('dead'),3000);later(()=>cls('ask'),3800);later(()=>pz(6),5800)},8:()=>{$('#ov').style.display='block';$('#ov').innerHTML=`<div id="bd">${files.map((i,k)=>`<div class="fc" style="--r:${(i*7)%9-4}deg;animation-delay:${k*.2}s"><small>0${i+1}</small>${P[i].name}</div>`).join('')}</div><h2 id="t1"></h2><button id="rv" hidden>كشف الحقيقة</button>`;
+7:()=>{later(()=>cls('glitch'),2200);later(()=>cls('dead'),3000);later(()=>cls('ask'),3800);later(()=>pz(6),5800)},8:()=>{$('#ov').style.display='block';$('#ov').style.backgroundImage='none';$('#ov').style.backgroundColor='#080d18';$('#ov').innerHTML=`<div id="bd">${files.map((i,k)=>`<div class="fc" style="--r:${(i*7)%9-4}deg;animation-delay:${k*.2}s"><small>0${i+1}</small>${P[i].name}</div>`).join('')}</div><h2 id="t1"></h2><button id="rv" hidden>كشف الحقيقة</button>`;
 const t=x=>{const e=$('#t1');e.style.animation='none';e.offsetWidth;e.style.animation='';e.textContent=x};later(()=>t('لقد اكتملت الأدلة.'),1800);later(()=>t('بقي شيء واحد فقط.'),4600);later(()=>{$('#rv').hidden=false},6600);$('#rv').onclick=reveal}};
 const cap=t=>{const e=$('#cap');e.textContent=t;e.classList.add('on');later(()=>e.classList.remove('on'),5500)};
 const hud=()=>{$('#fb').textContent=`FILES ${files.length}/9`;$('#dr').innerHTML=files.length?files.map(i=>`<div>0${i+1} — ${P[i].name}</div>`).join(''):'<div>—</div>'};
@@ -193,7 +193,7 @@ const win=i=>{cls('solved');if(i==3){const s=cur().querySelector('.spk');s.class
 if(!files.includes(i))files.push(i);save();hud();
 later(()=>{$('#stp').innerHTML=`<div>تم اكتشاف الملف 0${i+1}</div><small>أُضيف إلى ملف القضية: ${P[i].name}</small>`;$('#stp').className='on'},2600);
 later(()=>{$('#stp').className='';if(i===0){show(2,true);pz(1)}else if(i===1){show(3,true);pz(2)}else if(i===2){show(4,true);pz(3)}else if(i===6){show(10,true);pz(7)}else if(i===7){show(11,true);pz(8)}else if(i===8){show(8)}else{show(i+2)}},6000)};
-const reveal=()=>{gen++;$('#ov').style.display='block';$('#ov').innerHTML='<div id="bl" style="opacity:0"></div>';$('#hud').className='h';const b=$('#bl');requestAnimationFrame(()=>b.style.opacity=1);
+const reveal=()=>{gen++;$('#ov').style.display='block';$('#ov').style.backgroundImage='none';$('#ov').style.backgroundColor='#080d18';$('#ov').innerHTML='<div id="bl" style="opacity:0"></div>';$('#hud').className='h';const b=$('#bl');requestAnimationFrame(()=>b.style.opacity=1);
 setTimeout(()=>{$('#sc').innerHTML=S[9]();$('#ov').innerHTML='<div id="bl"></div><div id="fin"><small>أنت الآن...</small><h1>Ikigai Public Speaker</h1><h2>متحدث الإيكيجاي</h2><h3>Hossam Ahmed</h3><h4 style="font-size:2.2em;font-weight:700;color:#CAAD69;margin:.3em 0;text-shadow:0 2px 14px #000">Eman zidan</h4></div>'},1800);
 const at=(ms,f)=>setTimeout(f,ms),c=x=>cur().classList.add(x),f=$;
 at(4200,()=>{c('a');$('#bl').style.opacity=0});
