@@ -77,7 +77,7 @@ pp.forEach(g=>{g._x=+g.dataset.x;g._y=+g.dataset.y;g._r=+g.dataset.r;pos(g);g.on
 s.onpointermove=e=>{if(!d)return;const p=pt(e);d._x=p.x+d._ox;d._y=p.y+d._oy;pos(d)};
 s.onpointerup=()=>{if(!d)return;mv.add(d);d=null;if(mv.size>=3&&go('lit'))later(()=>pz(4),1300)};
 s.tidy=()=>{[[500,140],[200,340],[400,340],[600,340],[800,340]].forEach((t,i)=>{pp[i]._x=t[0];pp[i]._y=t[1];pp[i]._r=0;pos(pp[i])})}},
-7:()=>{later(()=>cls('glitch'),2200);later(()=>cls('dead'),3000);later(()=>cls('ask'),3800);later(()=>pz(6),5800)},10:()=>S[6](),11:()=>S[7](),
+7:()=>{later(()=>cls('glitch'),2200);later(()=>cls('dead'),3000);later(()=>cls('ask'),3800);later(()=>pz(6),5800)},10:()=>S[8](),11:()=>S[8](),
 8:()=>{$('#ov').innerHTML=`<div id="bd">${files.map((i,k)=>`<div class="fc" style="--r:${(i*7)%9-4}deg;animation-delay:${k*.2}s"><small>0${i+1}</small>${P[i].name}</div>`).join('')}</div><h2 id="t1"></h2><button id="rv" hidden>كشف الحقيقة</button>`;
 const t=x=>{const e=$('#t1');e.style.animation='none';e.offsetWidth;e.style.animation='';e.textContent=x};later(()=>t('لقد اكتملت الأدلة.'),1800);later(()=>t('بقي شيء واحد فقط.'),4600);later(()=>{$('#rv').hidden=false},6600);$('#rv').onclick=reveal}};
 const cap=t=>{const e=$('#cap');e.textContent=t;e.classList.add('on');later(()=>e.classList.remove('on'),5500)};
