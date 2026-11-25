@@ -149,3 +149,22 @@ svg.scene{position:absolute;inset:0;width:100%;height:100%;animation:zin 2.6s ea
 
 /* Make the final reveal action clearly readable */
 #rv{font-family:inherit;font-size:2.2em;font-weight:700;line-height:1.25;min-width:8em;padding:.55em 1.5em;border:2px solid #CAAD69;border-radius:10px;background:#3C93FF;color:#F8FBFF;text-shadow:0 2px 8px #17212B;box-shadow:0 0 24px #53D1EC88;}
+
+
+/* Final reveal button: fixed readable size on every screen */
+#rv{
+  font-family:inherit!important;
+  font-size:clamp(28px,3.6vw,48px)!important;
+  line-height:1.2!important;
+  font-weight:800!important;
+  min-width:min(360px,82%)!important;
+  min-height:76px!important;
+  padding:16px 34px!important;
+  border:3px solid #CAAD69!important;
+  border-radius:12px!important;
+  background:#1769B5!important;
+  color:#FFFFFF!important;
+  text-shadow:0 2px 5px #17212B!important;
+  box-shadow:0 0 30px #53D1EC!important;
+  z-index:20!important;
+}
