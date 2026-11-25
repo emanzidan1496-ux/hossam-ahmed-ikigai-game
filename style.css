@@ -119,3 +119,29 @@ svg.scene{position:absolute;inset:0;width:100%;height:100%;animation:zin 2.6s ea
   #cv .credit-pair{gap:10px;width:92%;margin-top:.8em}
   #cv .credit-card{padding:.42em .3em;font-size:clamp(.9em,3.6vw,1.2em)}
 }
+
+
+/* Exact supplied artwork as the opening screen */
+#ov{
+  background-image:url("./start75.jpg");
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-color:#061426;
+}
+#cv small,#cv h1,#cv .credit-pair,#cv i{display:none!important}
+#cv{padding-top:0}
+#cv button{
+  bottom:2.2%;
+  left:50%;
+  transform:translateX(-50%);
+  padding:.42em 1.5em;
+  font-size:clamp(1em,1.6vw,1.35em);
+  border:2px solid #CAAD69;
+  border-radius:8px;
+  background:rgba(9,31,54,.94);
+  color:#F7D47B;
+  box-shadow:0 0 18px rgba(83,209,236,.45);
+  animation:none;
+  white-space:nowrap;
+}
